@@ -32,7 +32,6 @@ public class ChatServer {
         User recipientUser = users.get(recipient);
         if (recipientUser != null && senderUser != null) {
             Message message = new Message(sender, recipient, content, new Date());
-            //senderUser.getChatHistory().addMessage(message); // Add to sender's ChatHistory
             recipientUser.getChatHistory().addMessage(message); // Add to recipient's ChatHistory
             recipientUser.receiveMessage(message); // Notify recipient of the message
         }
